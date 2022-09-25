@@ -1,0 +1,36 @@
+a<!DOCTYPE html>
+<html>
+<head>
+    <title>Index</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/stylesheets/jquery-ui.css">
+    <link rel="stylesheet" href="/stylesheets/logging.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body>
+    <div id="header">
+        <h1><a href="/">죠르디 카페</a></h1>
+    </div>
+
+    <div id="content">
+        <ol>
+            <%- boardList %>
+        </ol>
+    
+        <div id="articleContent">
+            <form action="/createPost" method="post">
+                <input type="hidden" name="boardId" value="<%= boardId %> ">
+                <input type="text" name="title" placeholder="Title" style="display: block;">
+                <input type="text" name="author" placeholder="Author" style="display: block;">
+                <textarea name="content" id="" cols="30" rows="10" style="display: block;"></textarea>
+                <input type="submit">
+            </form>
+        </div>
+    </div>
+    <script src="/vendors/jquery-3-3-1.js"></script>
+    <script src="/vendors/jquery-ui.js"></script>
+    <script src="/vendors/html2canvas.js"></script>
+    <script src="/resources/config.js"></script>
+</body>
+</html>

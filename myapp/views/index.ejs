@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Index</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/stylesheets/jquery-ui.css">
+    <link rel="stylesheet" href="/stylesheets/logging.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body>
+    <div id="header">
+        <h1><a href="/">죠르디 카페</a></h1>
+    </div>
+
+    <div id="content">
+        <ol>
+            <%- boardList %>
+        </ol>
+    
+        <div id="articleList">
+            <div id="articleListHeader">
+                <h3> <%= boardTitle %>  </h3>
+                <div>
+                    <span> <%= postCount %>  개의 글</span>
+                </div>
+            </div>
+            <div id="articleListContent">
+                <table>
+                    <caption>
+                        <span class="blind">게시물 목록</span>
+                    </caption>
+                    <colgroup>
+                        <col style="width:50px">
+                        <col>
+                        <col style="width:70px">
+                        <col style="width:70px">
+                        <col style="width:40px">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>게시글 제목</th>
+                            <th>작성자</th>
+                            <th>작성일</th>
+                            <th>조회</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <%- postList %>
+                    </tbody>
+                </table>
+            </div>
+            <div id="articleListFooter">
+                <div id="pageIndex">
+                    <%- pageIndex %> 
+                </div>
+                <div>
+                    <a href="/createPost/<%= boardId %> ">
+                        <input type="button" value="Create Post" >
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/vendors/jquery-3-3-1.js"></script>
+    <script src="/vendors/jquery-ui.js"></script>
+    <script src="/vendors/html2canvas.js"></script>
+    <script src="/resources/config.js"></script>
+</body>
+</html>
